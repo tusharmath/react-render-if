@@ -1,0 +1,17 @@
+{
+  "name": "react-render-if",
+  "version": "0.0.0",
+  "description": "Declarative way to control if a component needs to be rendered or not",
+  "main": "react-render-if.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "author": "tusharmath@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.10.0"
+  }
+}
