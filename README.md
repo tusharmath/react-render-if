@@ -2,7 +2,7 @@
 
 A decorator that can take any number of functions as predicates. The predicates are called with the current instance of the component as the first parameter. If the return value of all the params is truthty only then the component is rendered.
 
-**When to render** a component is primarly a property of the component. We often implement this behaviour in the `render()` function which mixes up with its primary responsiblity of — *how to render*. This makes the code difficult to read at the same time the logic becomes local to that particular render function and thus becomes non-reusable.
+**When to render** a component is primarly a property of the component. We often implement this behaviour in the `render()` function which mixes up with its primary responsiblity of — **how to render**. This makes the code difficult to read at the same time the logic becomes local to that particular render function and thus becomes non-reusable.
 This decorator helps alleviate that and follow [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
 
