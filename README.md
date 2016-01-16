@@ -75,6 +75,7 @@ class UserList extends Component {
 
 ```javascript
 import {curry} from 'lodash'
+// Create a reusable helper
 const isntEmpty = curry((path, i) => _.get(i, path).length > 0)
 
 @renderIf(
