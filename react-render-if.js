@@ -4,15 +4,14 @@
 
 'use strict'
 
-const _ = require('lodash')
-
+const toArray = x => Array.prototype.slice.call(x)
 exports.renderIf = function () {
-  const predicates = _.toArray(arguments)
+  const predicates = toArray(arguments)
   return component => {
     var prototype = component.prototype
     const render = prototype.render
     prototype.render = function () {
-      return _.every(predicates, i => i(this)) ? render.call(this) : null
+      return predicates.every(i => i(this)) ? render.call(this) : null
     }
     return component
   }
