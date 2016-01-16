@@ -29,7 +29,7 @@ class UserList extends Component {
   
     return (
       <ul>
-      {this.state.list.map(x => x)}
+        {this.state.list.map((x, i) => <li key={i}>{x}</li>)}
       </ul>
     )
   }
@@ -63,7 +63,7 @@ class UserList extends Component {
   render () {
     return (
       <ul>
-      {this.state.list.map(x => x)}
+        {this.state.list.map((x, i) => <li key={i}>{x}</li>)}
       </ul>
     )
   }
