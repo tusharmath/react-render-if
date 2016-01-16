@@ -1,5 +1,6 @@
 # react-render-if
 
+A decorator that can take any number of functions as predicates. The predicates are called with the current instance of the component as the first parameter. If the return value of all the params is truthty only then the component is rendered.
 
 ### Before
 
@@ -37,6 +38,7 @@ class UserList extends Component {
 import {renderIf} from 'react-render-if'
 import {Component} from 'react'
 
+// Takes in n number of predicates
 @renderIf(  
   x => x.state !== null, 
   x => x.state.list.length > 0
