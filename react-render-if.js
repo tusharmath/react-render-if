@@ -4,9 +4,9 @@
 
 'use strict'
 
-const toArray = x => Array.prototype.slice.call(x)
+const _ = require('lodash')
 exports.renderIf = function () {
-  const predicates = toArray(arguments)
+  const predicates = _.toArray(arguments)
   return component => {
     var prototype = component.prototype
     const render = prototype.render
@@ -16,3 +16,12 @@ exports.renderIf = function () {
     return component
   }
 }
+
+exports.has = _.curry((path, x) => _.has(x, path))
+exports.isTrue = _.curry((path, x) => _.get(x, path) === true)
+exports.isFalse = _.curry((path, x) => _.get(x, path) === false)
+exports.gt = _.curry((path, value, x) => _.get(x, path) > value)
+exports.gte = _.curry((path, value, x) => _.get(x, path) >= value)
+exports.lte = _.curry((path, value, x) => _.get(x, path) <= value)
+exports.equals = _.curry((path, value, x) => _.get(x, path) === value)
+
