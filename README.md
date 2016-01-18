@@ -87,3 +87,25 @@ class UserList extends Component {
   ...
 }
 ```
+
+
+## API Helpers
+
+Some useful helper functions are added as a part of this library so that you don't have to write anon arrow functions.
+
+- `itHas(<path>)`: renders if the path exists on a component. Eg. 'state.list.length'  
+
+- `itsTrue(<path>)`: renders if `true` is set at the path.
+
+- `itsFalse(<path>)`: renders if `false` is set at the path.
+
+- `itsOk(<path>)`: renders if path has a truthy value. 
+
+- `itsNotOk(<path>)`: renders if path has a falsey value. 
+
+- `itsGT(<path>, <value>)`: renders if the value at path is greater than the value passed as the second param. Other versions of this comparisons are —  `itsGTE`, `itsLTE` & `itsLT`. All of which take in <path> as the first param and <value> as the second.
+
+- `itsEqual(<path>, <value>)`: renders if the value at the given path is equal to what is being passed as the second param. 
+
+- `itsNotEqual(<path>, <value>)`: renders if the value at the given path is NOT equal to what is being passed as the second param.
+
