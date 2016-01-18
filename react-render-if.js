@@ -17,11 +17,22 @@ exports.renderIf = function () {
   }
 }
 
-exports.has = _.curry((path, x) => _.has(x, path))
-exports.isTrue = _.curry((path, x) => _.get(x, path) === true)
-exports.isFalse = _.curry((path, x) => _.get(x, path) === false)
-exports.gt = _.curry((path, value, x) => _.get(x, path) > value)
-exports.gte = _.curry((path, value, x) => _.get(x, path) >= value)
-exports.lte = _.curry((path, value, x) => _.get(x, path) <= value)
-exports.equals = _.curry((path, value, x) => _.get(x, path) === value)
+const HELPERS = {
+  itHas: (path, x) => _.has(x, path),
+  itsTrue: (path, x) => _.get(x, path) === true,
+  itsFalse: (path, x) => _.get(x, path) === false,
+
+  itsOk: (path, x) => Boolean(_.get(x, path)),
+  itsNotOk: (path, x) => !Boolean(_.get(x, path)),
+
+  itsGT: (path, value, x) => _.get(x, path) > value,
+  itsGTE: (path, value, x) => _.get(x, path) >= value,
+  itsLTE: (path, value, x) => _.get(x, path) <= value,
+  itsLT: (path, value, x) => _.get(x, path) < value,
+
+  itsEqual: (path, value, x) => _.get(x, path) === value,
+  itsNotEqual: (path, value, x) => _.get(x, path) !== value
+}
+
+_.each(HELPERS, (v, k) => exports[k] = _.curry(v))
 
