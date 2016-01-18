@@ -1,14 +1,22 @@
 {
   "name": "react-render-if",
-  "version": "0.0.0",
   "description": "Declarative way to control if a component needs to be rendered or not",
   "main": "react-render-if.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "tusharmath@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.10.0"
+    "ava": "^0.10.0",
+    "semantic-release": "^4.3.5"
+  },
+  "dependencies": {
+    "lodash": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tusharmath/react-render-if.git"
   }
 }
