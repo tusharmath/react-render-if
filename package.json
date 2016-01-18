@@ -24,5 +24,15 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "keywords": [
+    "render",
+    "conditional-rendering",
+    "decorator",
+    "declarative",
+    "if",
+    "then",
+    "else",
+    "predicates"
+  ]
 }
