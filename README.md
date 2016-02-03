@@ -109,3 +109,10 @@ Some useful helper functions are added as a part of this library so that you don
 
 - `itsNotEqual(<path>, <value>)`: renders if the value at the given path is NOT equal to what is being passed as the second param.
 
+
+---
+
+Uses [lodash custom build](https://lodash.com/custom-builds)
+```
+lodash include=has,get,curry,toArray -d
+```
