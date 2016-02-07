@@ -13,79 +13,54 @@ npm i react-render-if --save
 ### Before
 
 ```javascript
-class UserList extends Component {
-  componentWillMount () {
-    this.setState({list: []})
-    
-    setInterval(x => {
-      const list = this.state.list.slice()
-      list.push(new Date())
-      this.setState({list})
-    }, 1000)
-    
-  }
+class Header extends Component {
   render () {
     // Complex logic inside the render function about "when to render" the component.
-    // Interferes with the "how to render" which should be it primary responsibility.
-    if(this.state === null || this.state.list.length === 0){
-      return null
+    // Interferes with the "how to render", which should be render() function's primary responsibility.
+    
+    if(this.props.loggedIn){
+      return (
+        <div>Welcome!</div>
+      )
+    } else {
+      return <div><a href="/#/login">Login</a></div>
     }
-  
-    return (
-      <ul>
-        {this.state.list.map((x, i) => <li key={i}>{x}</li>)}
-      </ul>
-    )
   }
 }
-
 ```
 
 
-### Usage
+### After
 
 ```javascript
-import {renderIf} from 'react-render-if'
+import {renderIf, itsTrue, itsFalse} from 'react-render-if'
 import {Component} from 'react'
 
-// Takes in n number of predicates
-@renderIf(  
-  x => x.state !== null, 
-  x => x.state.list.length > 0
-)
-class UserList extends Component {
-  componentWillMount () {
-    this.setState({list: []})
-    
-    setInterval(x => {
-      const list = this.state.list.slice()
-      list.push(new Date())
-      this.setState({list})
-    }, 1000)
-    
-  }
+
+class Header extends Component {
   render () {
+    const loggedIn = this.props.loggedIn
     return (
-      <ul>
-        {this.state.list.map((x, i) => <li key={i}>{x}</li>)}
-      </ul>
+      <HeaderLoggedIn loggedIn={loggedIn} />
+      <HeaderLoggedOut loggedIn={loggedIn} />
     )
   }
 }
 
-```
-
-## Even Better
-
-```javascript
-import {renderIf, itsGT} from 'react-render-if'
-import {Component} from 'react'
- 
-// itsGT() is a helper that makes sure that the component is only rendered if state.list.length is greater than 0
-@renderIf(itsGT('state.list.length', 0))
-class UserList extends Component {
-  ...
+@renderIf(itsTrue('props.loggedIn'))
+class HeaderLoggedIn extends Component {
+  render () {
+    return (<div>Welcome!</div>)
+  }
 }
+
+@renderIf(itsFalse('props.loggedIn'))
+class HeaderLoggedOut extends Component {
+  render () {
+    return (<div><a href="/#/login">Login</a></div>)
+  }
+}
+
 ```
 
 
