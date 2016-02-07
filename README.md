@@ -1,8 +1,9 @@
 # react-render-if [![Build Status](https://travis-ci.org/tusharmath/react-render-if.svg?branch=master)](https://travis-ci.org/tusharmath/react-render-if) [![npm](https://img.shields.io/npm/v/react-render-if.svg)]() [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-A decorator that can take any number of functions as predicates. The predicates are called with the current instance of the component as the first parameter. If the return value of all the params is truthy only then the component is rendered.
 
-**When to render** a component is primarly a property of the component. We often implement this behaviour in the `render()` function which mixes up with its primary responsiblity of — **how to render**. This makes the code difficult to read at the same time the logic becomes local to that particular render function and thus becomes non-reusable.
-This decorator helps alleviate that and follow [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+Using `if` and `else` in your react components goes against the [open close principle](http://www.oodesign.com/open-close-principle.html).
+> Software entities like classes, modules and functions should be open for extension but closed for modifications.
+
+Also, **when to render** a component is primarly a property of the component. We often implement this behaviour in the `render()` function which mixes up with its primary responsiblity of — **how to render**. This makes the code difficult to read at the same time the logic becomes local to that particular render function.
 
 ## Installation
 
@@ -64,8 +65,8 @@ class HeaderLoggedOut extends Component {
 ```
 
 
-## API Helpers
 
+## API Helpers
 Some useful helper functions are added as a part of this library so that you don't have to write anon arrow functions.
 
 - `itHas(<path>)`: renders if the path exists on a component. Eg. 'state.list.length'  
