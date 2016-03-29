@@ -92,3 +92,11 @@ Uses [lodash custom build](https://lodash.com/custom-builds)
 ```
 lodash include=has,get,curry,toArray -d
 ```
+
+### Must See Alternatives
+
+[react-if]: https://github.com/romac/react-if
+[jsx-control-statements]: https://github.com/AlexGilleran/jsx-control-statements
+
+- [react-if][react-if]
+- [jsx-control-statements][jsx-control-statements]
