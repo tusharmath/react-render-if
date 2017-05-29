@@ -1,5 +1,7 @@
 # react-render-if [![Build Status](https://travis-ci.org/tusharmath/react-render-if.svg?branch=master)](https://travis-ci.org/tusharmath/react-render-if) [![npm](https://img.shields.io/npm/v/react-render-if.svg)]() [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tusharmath/react-render-if.svg)](https://greenkeeper.io/)
+
 Using `if` and `else` in your react components goes against the [open close principle](http://www.oodesign.com/open-close-principle.html).
 > Software entities like classes, modules and functions should be open for extension but closed for modifications.
 
